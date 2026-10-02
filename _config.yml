@@ -27,7 +27,7 @@ author:
   name             : "Karol Bacik"
   pronouns         : # example: "she/her"  
   bio              : "Assistant Professor of Mathematics"
-  location         : "Department of Mathematics"
+  location         : # "Department of Mathematics"
   employer         : "Penn State University"
   uri              : # URL
   email            : "kbacik@psu.edu" 
