@@ -28,29 +28,25 @@ redirect_from:
 
 ### Employment
 
-**Assistant Professor**  
-Pennsylvania State University  
+**Assistant Professor**, Penn State University  
 2026–present
 
-**C.L.E. Moore Instructor**
-Massachusetts Institute of Technology  
+**C.L.E. Moore Instructor**, MIT
 2023–2026
 
-**Research Associate**  
-University of Bath  
+**Research Associate**, University of Bath  
 2021–2023
 
 ### Education
 
-**Ph.D. in Applied Mathematics**  
-University of Cambridge, 2017–2021  
-*Supervisors:* Dr. Nathalie Vriend, Prof. Colm-cille Caulfield  
+**Ph.D. in Applied Mathematics**, University of Cambridge 
+2017-2021
 
-**Master of Advanced Studies**  
-University of Cambridge, 2016–2017
+**Master of Advanced Studies**, University of Cambridge
+2016–2017
 
-**B.Sc. Mathematics**  
-Imperial College London, 2013–2016
+**B.Sc. Mathematics**, Imperial College London
+2013–2016
 
   
 
