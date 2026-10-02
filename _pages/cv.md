@@ -7,58 +7,51 @@ redirect_from:
   - /resume
 ---
 
+<style>
+  .page {
+    font-size: 0.75rem;
+  }
+  .page h2 {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  .page p {
+    margin: 0.1rem 0;
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+</style>
+
 {% include base_path %}
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+## Employment
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**Assistant Professor**  
+Pennsylvania State University  
+2026–present
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+**C.L.E. Moore Instructor**  
+Massachusetts Institute of Technology  
+2023–2026
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+**Research Associate**  
+University of Bath  
+2021–2023
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+## Education
+
+**Ph.D. in Applied Mathematics**  
+University of Cambridge, 2017–2021  
+*Supervisors:* Dr. Nathalie Vriend, Prof. Colm-cille Caulfield  
+*Thesis:* "Sand dune interactions."
+
+**Master of Advanced Studies**  
+University of Cambridge, 2016–2017
+
+**B.Sc. Mathematics**  
+Imperial College London, 2013–2016
+
   
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
