@@ -21,7 +21,9 @@ author_profile: true
   
   <div class="publication-list">
     {% assign sorted_pubs = site.publications | where: "category", cat_key | sort: "date" | reverse %}
+    {% assign pub_number = 0 %}
     {% for post in sorted_pubs %}
+      {% assign pub_number = pub_number | plus: 1 %}
       <div class="publication-item">
         {% if post.image %}
           <div class="publication-image">
@@ -30,13 +32,22 @@ author_profile: true
         {% endif %}
         
         <div class="publication-content">
-          <h3>{{ post.title }}</h3>
+          <p class="publication-number-title">
+            <strong>[{{ pub_number }}]</strong> {{ post.title }}
+          </p>
           <p class="publication-meta">
-            <strong>{{ post.venue }}</strong>
+            {{ post.venue }}
             {% if post.volume %} {{ post.volume }}{% endif %}
-            {% if post.pages %}: {{ post.pages }}{% endif %}
+            {% if post.pages %} {{ post.pages }}{% endif %}
             ({{ post.date | date: "%Y" }})
           </p>
+          {% if post.paperurl or post.slidesurl or post.bibtexurl %}
+            <p class="publication-links">
+              {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+              {% if post.slidesurl %}<span class="sep">|</span> <a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+              {% if post.bibtexurl %}<span class="sep">|</span> <a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+            </p>
+          {% endif %}
           <p class="publication-excerpt">{{ post.excerpt }}</p>
         </div>
       </div>
