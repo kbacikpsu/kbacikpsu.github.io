@@ -23,7 +23,7 @@ repository               : "kbacikpsu/kbacikpsu.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "karol.jpg"
   name             : "Karol Bacik"
   pronouns         : # example: "she/her"  
   bio              : "Assistant Professor of Mathematics"
