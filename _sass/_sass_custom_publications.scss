@@ -1,0 +1,94 @@
+/* Publication list styling - CV style */
+
+.publication-list {
+  margin-bottom: 2rem;
+}
+
+.publication-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.publication-image {
+  flex-shrink: 0;
+  width: 100px;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.publication-content {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.publication-number-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.publication-meta {
+  margin: 0.1rem 0;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.publication-links {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .sep {
+    margin: 0 0.3rem;
+    color: #999;
+  }
+}
+
+.publication-excerpt {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .publication-item {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .publication-image {
+    width: 80px;
+  }
+}
