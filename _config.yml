@@ -24,7 +24,7 @@ repository               : "kbacikpsu/kbacikpsu.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Karol Bacik"
+  name             : # "Karol Bacik"
   pronouns         : # example: "she/her"  
   bio              : "Assistant Professor"
   location         : 3 "Department of Mathematics"
