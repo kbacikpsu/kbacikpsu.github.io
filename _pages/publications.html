@@ -1,75 +1,51 @@
-/* Publication list styling with images */
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
 
-.publication-list {
-  margin-bottom: 3rem;
-}
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
 
-.publication-item {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
+{% include base_path %}
+
+<!-- Publication categories -->
+{% assign categories = site.data.publication_categories %}
+
+{% for category in categories %}
+  {% assign cat_key = category[0] %}
+  <h2>{{ category[1].title }}</h2>
+  <hr />
   
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.publication-image {
-  flex-shrink: 0;
-  width: 150px;
-  
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-}
-
-.publication-content {
-  flex: 1;
-  
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    
-    a {
-      text-decoration: none;
+  <div class="publication-list">
+    {% for post in site.publications reversed %}
+      {% if post.category != cat_key %}
+        {% continue %}
+      {% endif %}
       
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.publication-meta {
-  margin: 0.25rem 0;
-  font-size: 0.95rem;
-  color: #666;
-}
-
-.publication-excerpt {
-  margin: 0.5rem 0 0 0;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .publication-item {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .publication-image {
-    width: 100%;
-    max-width: 200px;
-  }
-}
+      <div class="publication-item">
+        {% if post.image %}
+          <div class="publication-image">
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+          </div>
+        {% endif %}
+        
+        <div class="publication-content">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <p class="publication-meta">
+            <strong>{{ post.venue }}</strong>
+            {% if post.volume %} {{ post.volume }}{% endif %}
+            {% if post.pages %}: {{ post.pages }}{% endif %}
+            ({{ post.date | date: "%Y" }})
+          </p>
+          <p class="publication-excerpt">{{ post.excerpt }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
 
 
 
