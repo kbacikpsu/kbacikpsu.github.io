@@ -3,16 +3,100 @@ layout: archive
 title: "Publications"
 permalink: /publications/
 author_profile: true
+publications:
+  - title: "The dynamics of sand dunes."
+    authors: "N.M. Vriend, K.A. Bacik"
+    venue: "Annu. Rev. Fluid Mech."
+    date: 2026
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1146/annurev-fluid-121223-115714"
+    
+  - title: "Order–disorder transition in multidirectional crowds."
+    authors: "K.A. Bacik, G. Sobota, B.S. Bacik, T. Rogers"
+    venue: "PNAS"
+    volume: "122(14), e2420697122"
+    date: 2025
+    category: "crowd_modeling"
+    paperurl: "https://doi.org/10.1073/pnas.2420697122"
+    
+  - title: "Soft matter physics of the ground beneath our feet."
+    authors: "A. Voigtländer et al."
+    venue: "Soft Matter"
+    volume: "20, 30"
+    date: 2024
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1039/D3SM01424H"
+    
+  - title: "Lane nucleation in complex active flows."
+    authors: "K.A. Bacik, B.S. Bacik, T. Rogers"
+    venue: "Science"
+    volume: "379, 923–928"
+    date: 2023
+    category: "crowd_modeling"
+    paperurl: "https://doi.org/10.1126/science.abm4272"
+    
+  - title: "Coarsening dynamics of 2D subaqueous dunes."
+    authors: "P.A. Jarvis, K.A. Bacik, C. Narteau, N.M. Vriend"
+    venue: "J. Geophys. Res. Earth Surf."
+    volume: "127, e2021JF006492"
+    date: 2022
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1029/2021JF006492"
+    
+  - title: "Stability of the interaction between two sand dunes in an idealized laboratory experiment."
+    authors: "K.A. Bacik, C.P. Caulfield, N.M. Vriend"
+    venue: "Phys. Rev. Lett."
+    volume: "127, 154501"
+    date: 2021
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1103/PhysRevLett.127.154501"
+    
+  - title: "Dynamics of migrating sand dunes interacting with obstacles."
+    authors: "K.A. Bacik, P. Canizares, C.P. Caulfield, M.J. Williams, N.M. Vriend"
+    venue: "Phys. Rev. Fluids"
+    volume: "6, 104308"
+    date: 2021
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1103/PhysRevFluids.6.104308"
+    
+  - title: "Blowin' in the Wind Same as Flowing in H₂O."
+    authors: "N.M. Vriend, K.A. Bacik"
+    venue: "Physics"
+    volume: "13, 62"
+    date: 2020
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1103/Physics.13.62"
+    
+  - title: "Wake-induced long-range repulsion of aqueous dunes."
+    authors: "K.A. Bacik, S. Lovett, C.P. Caulfield, N.M. Vriend"
+    venue: "Phys. Rev. Lett."
+    volume: "124, 054501"
+    date: 2020
+    category: "granular_mechanics"
+    paperurl: "https://doi.org/10.1103/PhysRevLett.124.054501"
+    
+  - title: "Flow-based network analysis of the C. elegans connectome."
+    authors: "K.A. Bacik, M.T. Schaub, M. Beguerisse-Díaz, Y.N. Billeh, M. Barahona"
+    venue: "PLoS Comput. Biol."
+    volume: "12(8): e1005055"
+    date: 2016
+    category: "complex_networks"
+    paperurl: "https://doi.org/10.1371/journal.pcbi.1005055"
+
+categories:
+  granular_mechanics:
+    title: "Granular Mechanics"
+  crowd_modeling:
+    title: "Crowd Modeling"
+  complex_networks:
+    title: "Complex Networks"
 ---
 
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
-{% include base_path %}
-
-<!-- Publication categories -->
-{% assign categories = site.data.publication_categories %}
+{% assign categories = page.categories %}
 
 {% for category in categories %}
   {% assign cat_key = category[0] %}
@@ -20,32 +104,26 @@ author_profile: true
   <hr />
   
   <div class="publication-list">
-    {% assign sorted_pubs = site.publications | where: "category", cat_key | sort: "date" | reverse %}
+    {% assign sorted_pubs = page.publications | where: "category", cat_key | sort: "date" | reverse %}
     {% assign pub_number = 0 %}
-    {% for post in sorted_pubs %}
+    {% for pub in sorted_pubs %}
       {% assign pub_number = pub_number | plus: 1 %}
       <div class="publication-item">
-        {% if post.image %}
-          <div class="publication-image">
-            <img src="{{ post.image }}" alt="{{ post.title }}">
-          </div>
-        {% endif %}
-        
         <div class="publication-content">
           <p class="publication-number-title">
-            <strong>[{{ pub_number }}]</strong> {{ post.title }}
+            <strong>[{{ pub_number }}]</strong> {{ pub.title }}
+          </p>
+          <p class="publication-authors">
+            {{ pub.authors }}
           </p>
           <p class="publication-meta">
-            {{ post.venue }}
-            {% if post.volume %} {{ post.volume }}{% endif %}
-            {% if post.pages %} {{ post.pages }}{% endif %}
-            ({{ post.date | date: "%Y" }})
+            {{ pub.venue }}
+            {% if pub.volume %} {{ pub.volume }}{% endif %}
+            ({{ pub.date }})
           </p>
-          {% if post.paperurl or post.slidesurl or post.bibtexurl %}
+          {% if pub.paperurl %}
             <p class="publication-links">
-              {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
-              {% if post.slidesurl %}<span class="sep">|</span> <a href="{{ post.slidesurl }}">Slides</a>{% endif %}
-              {% if post.bibtexurl %}<span class="sep">|</span> <a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+              <a href="{{ pub.paperurl }}">Paper</a>
             </p>
           {% endif %}
         </div>
