@@ -1,36 +1,75 @@
----
-layout: archive
-title: "Publications"
-permalink: /publications/
-author_profile: true
----
+/* Publication list styling with images */
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+.publication-list {
+  margin-bottom: 3rem;
+}
 
-{% include base_path %}
+.publication-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+.publication-image {
+  flex-shrink: 0;
+  width: 150px;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.publication-content {
+  flex: 1;
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    
+    a {
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.publication-meta {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.publication-excerpt {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .publication-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .publication-image {
+    width: 100%;
+    max-width: 200px;
+  }
+}
 
 
 
