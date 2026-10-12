@@ -100,7 +100,7 @@ categories:
     image: "/images/publications/Bacik_2023_Image_2.png"
   complex_networks:
     title: "Complex Networks"
-    image: "/images/publications/complex-networks.jpg"
+    image: "/images/publications/celegans.png"
 ---
 
 <style>
@@ -130,6 +130,13 @@ categories:
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .category-image img.rotate-crowd {
+    width: 80px;
+    height: 200px;
+    transform: rotate(90deg);
+    transform-origin: center;
   }
   
   .category-title-wrapper {
@@ -215,12 +222,12 @@ categories:
 {% for category in categories %}
   {% assign cat_key = category[0] %}
   
-  <details class="publication-category" open>
+  <details class="publication-category">
     <summary>
       <div class="category-header">
         {% if category[1].image %}
           <div class="category-image">
-            <img src="{{ category[1].image }}" alt="{{ category[1].title }}">
+            <img class="{% if cat_key == 'crowd_modeling' %}rotate-crowd{% endif %}" src="{{ category[1].image }}" alt="{{ category[1].title }}">
           </div>
         {% endif %}
         <div class="category-title-wrapper">
@@ -254,8 +261,8 @@ categories:
         </div>
       {% endfor %}
     </div>
-  </details>
-{% endfor %}
+  {% endfor %}
+</details>
 
 
 
